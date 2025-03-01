@@ -11,7 +11,8 @@ let port = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:3000" })); // Match React default port
+
+app.use(cors({ origin: process.env.ERONTEND_URL})); 
 
 
 // MongoDB Connection
